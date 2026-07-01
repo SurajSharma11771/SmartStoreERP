@@ -22,13 +22,16 @@ public class SecurityConfig {
                         .requestMatchers("/api/v1/health").permitAll()
 
                         .requestMatchers("/api/v1/products/**").permitAll()
+                        
+                        .requestMatchers("/api/v1/categories/**").permitAll()
 
                         .anyRequest().authenticated()
+                        
 
                 )
 
                 .httpBasic(Customizer.withDefaults());
-
+                
         return http.build();
     }
 }
